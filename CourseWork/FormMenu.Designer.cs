@@ -55,6 +55,7 @@
             this.MbcAircraft.Size = new System.Drawing.Size(208, 257);
             this.MbcAircraft.TabIndex = 3;
             this.MbcAircraft.Title = "Aircraft";
+            this.MbcAircraft.Click += new System.EventHandler(this.MbcAircraft_Click);
             // 
             // MbcInstructor
             // 
@@ -64,6 +65,7 @@
             this.MbcInstructor.Size = new System.Drawing.Size(208, 257);
             this.MbcInstructor.TabIndex = 2;
             this.MbcInstructor.Title = "CFI\'s";
+            this.MbcInstructor.Click += new System.EventHandler(this.MbcInstructor_Click);
             // 
             // MbcStudent
             // 
@@ -73,6 +75,7 @@
             this.MbcStudent.Size = new System.Drawing.Size(208, 257);
             this.MbcStudent.TabIndex = 1;
             this.MbcStudent.Title = "Students";
+            this.MbcStudent.Click += new System.EventHandler(this.MbcStudent_Click);
             // 
             // MbcLogs
             // 

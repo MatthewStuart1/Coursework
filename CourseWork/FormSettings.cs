@@ -21,7 +21,7 @@ namespace CourseWork
         private void FormSettings_Load(object sender, EventArgs e)
         {
 
-            SettingsManager.Load();
+            Setting.Load();
 
 
             tlpSettings.Controls.Clear();
@@ -30,7 +30,7 @@ namespace CourseWork
             textBoxPairs.Clear();
 
             // for each setting, add row and stuff
-            foreach (var setting in SettingsManager.Settings)
+            foreach (var setting in Setting.Settings)
             {
                 int rowIndex = tlpSettings.RowCount++;
                 tlpSettings.RowStyles.Add(new RowStyle(SizeType.AutoSize));
@@ -48,16 +48,31 @@ namespace CourseWork
                 lblKey.Dock = DockStyle.Fill;
 
 
-                // Add the label and textbox to the TableLayoutPanel.
                 tlpSettings.Controls.Add(lblKey, 0, rowIndex);
                 tlpSettings.Controls.Add(txtValue, 1, rowIndex);
-
-                // Remember the textbox for saving changes.
                 textBoxPairs[setting.Key] = txtValue;
+                // textBoxPairs is a dictionary that maps a setting name (setting.Key) to its text box control (txtValue).
+
             }
 
 
         }
 
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnSaveExit_Click(object sender, EventArgs e)
+        {
+            foreach (var key in textBoxPairs.Keys)
+            {
+                Setting.Settings[key] = textBoxPairs[key].Text;
+
+                // for every key in the dictionary 
+            }
+            Setting.Save();
+            this.Close();
+        }
     }
 }

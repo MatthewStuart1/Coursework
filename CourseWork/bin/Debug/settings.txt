@@ -1,8 +1,9 @@
-maxFlightHoursPerMonth=100
-minRestHoursBetweenFlights=12
-aircraftMaintenanceInterval=100
-defaultFlightLessonDuration=90
+maxFlightHoursPerMonth=1
+minRestHoursBetweenFlights=2
+aircraftMaintenanceInterval=3
+defaultFlightLessonDuration=4
 maxStudentsPerInstructor=5
 cancellationFee=50
 bulkBookingDiscount=10
 fuelCostPerUnit=4.50
+serviceInterval=100

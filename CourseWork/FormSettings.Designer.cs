@@ -51,8 +51,9 @@
             this.btnSaveExit.Name = "btnSaveExit";
             this.btnSaveExit.Size = new System.Drawing.Size(111, 47);
             this.btnSaveExit.TabIndex = 0;
-            this.btnSaveExit.Text = "Save & Exit";
+            this.btnSaveExit.Text = "Save + Exit";
             this.btnSaveExit.UseVisualStyleBackColor = true;
+            this.btnSaveExit.Click += new System.EventHandler(this.btnSaveExit_Click);
             // 
             // btnExit
             // 
@@ -62,6 +63,7 @@
             this.btnExit.TabIndex = 1;
             this.btnExit.Text = "Exit\r\n(Without Saving)";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // FormSettings
             // 

@@ -7,20 +7,20 @@ using System.Threading.Tasks;
 
 namespace CourseWork
 {
-    public static class SettingsManager
+    public static class Setting
     {
         //dictionary stores pairs of values https://www.geeksforgeeks.org/c-sharp-dictionary-with-examples/
 
         public static Dictionary<string, string> Settings = new Dictionary<string, string>();
-        private static readonly string file = "settings.txt";
+        private static string file = "settings.txt";
 
         public static void Save()
         {
             using (StreamWriter streamwriter = new StreamWriter(file))
             {
-                foreach (var kvp in Settings)
+                foreach (var keyValPair in Settings)
                 {
-                    streamwriter.WriteLine(kvp.Key + "=" + kvp.Value);
+                    streamwriter.WriteLine(keyValPair.Key + "=" + keyValPair.Value);
                 }
             }
         }
@@ -51,6 +51,7 @@ namespace CourseWork
                 Settings["cancellationFee"] = "50";
                 Settings["bulkBookingDiscount"] = "10";
                 Settings["fuelCostPerUnit"] = "4.50";
+                Settings["serviceInterval"] = "100";
                 Save();
             }
         }

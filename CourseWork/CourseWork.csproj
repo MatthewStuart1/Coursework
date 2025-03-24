@@ -50,6 +50,24 @@
     <Compile Include="clsSettings.cs" />
     <Compile Include="clsDarkMode.cs" />
     <Compile Include="clsDBConnector.cs" />
+    <Compile Include="FormAircraftMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAircraftMenu.Designer.cs">
+      <DependentUpon>FormAircraftMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCfiMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCfiMenu.Designer.cs">
+      <DependentUpon>FormCfiMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLogIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogIn.Designer.cs">
+      <DependentUpon>FormLogIn.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLogsMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +86,12 @@
     <Compile Include="FormSettings.Designer.cs">
       <DependentUpon>FormSettings.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormStudentMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStudentMenu.Designer.cs">
+      <DependentUpon>FormStudentMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="menuBoxControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -76,11 +100,26 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormAircraftMenu.resx">
+      <DependentUpon>FormAircraftMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCfiMenu.resx">
+      <DependentUpon>FormCfiMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogIn.resx">
+      <DependentUpon>FormLogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogsMenu.resx">
+      <DependentUpon>FormLogsMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMenu.resx">
       <DependentUpon>FormMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSettings.resx">
       <DependentUpon>FormSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormStudentMenu.resx">
+      <DependentUpon>FormStudentMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="menuBoxControl.resx">
       <DependentUpon>menuBoxControl.cs</DependentUpon>
