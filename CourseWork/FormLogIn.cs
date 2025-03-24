@@ -35,8 +35,9 @@ namespace CourseWork
 
             if (login == true)
             {
-
-                FormCfiMenu.Username = username;
+                FormCfiMenu formCfiMenu = new FormCfiMenu();
+                formCfiMenu.Username = username;
+                formCfiMenu.Show();
             }
             else
             { 
