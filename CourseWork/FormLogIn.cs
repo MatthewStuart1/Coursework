@@ -1,6 +1,6 @@
 ﻿using StudentLatesCSV1;
 using System;
-using System.Diagnostics.Eventing.Reader;
+using System.Data.OleDb;
 using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
@@ -9,10 +9,6 @@ namespace CourseWork
 {
     public partial class FormLogIn : Form
     {
-
-        bool login = false;
-        string username = "";
-        string password = "";
         public FormLogIn()
         {
             InitializeComponent();
@@ -25,24 +21,31 @@ namespace CourseWork
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            username = txtUser.Text;
-            Hashing(txtPass.Text);
-          
+            int username = txtUser.Text;
+            string hashtext = Hashing(txtPass.Text);
 
             clsDBConnector dbConnector = new clsDBConnector();
-            //stuck
+            OleDbDataReader dr;
+            string cmdString = $"SELECT PasswordHash FROM Instructors WHERE Username = '{username}'";
+            dbConnector.Connect();
 
-
-            if (login == true)
+            dr = dbConnector.DoSQL(cmdString);
+            dr.Read();
+            if (dr["passwordhash"] == hashtext)
             {
+
                 FormCfiMenu formCfiMenu = new FormCfiMenu();
-                formCfiMenu.Username = username;
+                username = Convert.ToInt32(txtUser.Text);
                 formCfiMenu.Show();
+
             }
             else
-            { 
-            
-            
+            {
+                MessageBox.Show("failed to Sign In; +" +
+                    "Please Try Again");
+
+                txtPass.Clear();
+                txtUser.Clear();
             }
         }
 

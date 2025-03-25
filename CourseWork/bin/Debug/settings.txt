@@ -1,4 +1,4 @@
-maxFlightHoursPerMonth=1
+maxFlightHoursPerMonth=123
 minRestHoursBetweenFlights=2
 aircraftMaintenanceInterval=3
 defaultFlightLessonDuration=4
