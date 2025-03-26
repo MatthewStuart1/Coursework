@@ -1,6 +1,6 @@
 ﻿namespace CourseWork
 {
-    partial class FormStudentMenu
+    partial class FormLogInStu
     {
         /// <summary>
         /// Required designer variable.
@@ -28,35 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
-            // label1
+            // flowLayoutPanel1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Noto Sans", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 49);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "    ";
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 12);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(587, 428);
+            this.flowLayoutPanel1.TabIndex = 0;
             // 
-            // FormStudentMenu
+            // FormLogInStu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label1);
-            this.Name = "FormStudentMenu";
-            this.Text = "FormStudentMenu";
-            this.Load += new System.EventHandler(this.FormStudentMenu_Load);
+            this.ClientSize = new System.Drawing.Size(611, 452);
+            this.Controls.Add(this.flowLayoutPanel1);
+            this.Name = "FormLogInStu";
+            this.Text = "FormLogInStu";
+            this.Load += new System.EventHandler(this.FormLogInStu_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

@@ -18,7 +18,7 @@ namespace CourseWork
 
         }
 
-
+//------------------------------------------------------------------------------
         private void ImgSettings_Click(object sender, EventArgs e)
         {
             FormSettings formSettings = new FormSettings();
@@ -31,16 +31,19 @@ namespace CourseWork
             formLogsMenu.Show();
         }
 
+        private void MbcStudent_Click(object sender, EventArgs e)
+        {
+
+            FormLogInStu formLogInStu = new FormLogInStu();
+            formLogInStu.Show();
+          //  FormStudentMenu formStudentMenu = new FormStudentMenu();
+          //  formStudentMenu.Show();
+        }
+
         private void MbcInstructor_Click(object sender, EventArgs e)
         {
             FormLogIn formLogIn = new FormLogIn();
             formLogIn.Show();
-        }
-
-        private void MbcStudent_Click(object sender, EventArgs e)
-        {
-            FormStudentMenu formStudentMenu = new FormStudentMenu();
-            formStudentMenu.Show();
         }
 
         private void MbcAircraft_Click(object sender, EventArgs e)

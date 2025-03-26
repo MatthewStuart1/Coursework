@@ -14,7 +14,7 @@ namespace StudentLatesCSV1
         public void Connect()
         {
             dbProvider = "Provider=Microsoft.ACE.OLEDB.12.0;";
-            dbSource = @"Data Source = " + workingDirectory + @"\CourseworkDB.accdb" ;
+            dbSource = @"Data Source=" + workingDirectory + @"\db.accdb";
             conn.ConnectionString = dbProvider + dbSource;
             //conn.ConnectionString =  Properties.Settings.Default.dbStudentlatesConnectionString ;
             conn.Open();

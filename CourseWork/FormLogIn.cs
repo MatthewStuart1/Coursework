@@ -16,26 +16,28 @@ namespace CourseWork
 
         private void FormLogIn_Load(object sender, EventArgs e)
         {
-
+            DarkMode.Apply(this);
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            int username = txtUser.Text;
+            int userID = Convert.ToInt32(txtUser.Text);
+
             string hashtext = Hashing(txtPass.Text);
 
             clsDBConnector dbConnector = new clsDBConnector();
             OleDbDataReader dr;
-            string cmdString = $"SELECT PasswordHash FROM Instructors WHERE Username = '{username}'";
+            string cmdString = $"SELECT PasswordHash FROM Instructors WHERE [UserID] = {userID}";
+
             dbConnector.Connect();
 
             dr = dbConnector.DoSQL(cmdString);
             dr.Read();
-            if (dr["passwordhash"] == hashtext)
+            if (dr["PasswordHash"].ToString() == hashtext)
             {
 
                 FormCfiMenu formCfiMenu = new FormCfiMenu();
-                username = Convert.ToInt32(txtUser.Text);
+                userID = Convert.ToInt32(txtUser.Text);
                 formCfiMenu.Show();
 
             }
@@ -64,7 +66,7 @@ namespace CourseWork
                     hashtext += hexhash;
                     // += adds to the string (each hex result gets added into the string)
                 }
-                return hashtext;
+                return hashtext.ToLower();
             }
 
         } // returns SHA 256 hash of plaintextPassword
