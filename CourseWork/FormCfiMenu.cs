@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,27 +16,52 @@ namespace CourseWork
     {
 
         public string Username {  get; set; }  //tom ballantine special
-        public FormCfiMenu()
+        public FormCfiMenu(string strUser)
         {
             InitializeComponent();
+            Username = strUser;
         }
 
         private void FormCfiMenu_Load(object sender, EventArgs e)
         {
-            nameLabel(sender);
+           nameLabel(sender);
+            lstBookingFill();
         }
+
+        private void lstBookingFill()
+        {
+        public void DisplayLateData(int placeholder)
+        {
+            clsDBConnector dbConnector = new clsDBConnector();
+            OleDbDataReader dr;
+            string sqlStr;
+            dbConnector.Connect();
+            sqlStr = $"SELECT DateandTime, StudentID, Duration FROM Bookings WHERE InstructorID = {Convert.ToInt32(Username)}";
+            dr = dbConnector.DoSQL(sqlStr);
+            lstBookings.Items.Clear();
+            while (dr.Read())
+            {
+                lstBookings.Items.Add(dr[0].);
+                lstBookings.Items.Add(dr[1].ToString);
+
+            }
+            dbConnector.Close();
+        }
+        
 
         private void nameLabel(object sender)
         {
-
             clsDBConnector dBConnector = new clsDBConnector();
-
-            string sql = $"SELECT FirstName FROM instructors WHERE Username = '{sender.ToString()}'";
+            OleDbDataReader dr;
+            string sql = $"SELECT FirstName FROM instructors WHERE UserID = {Username}";
             dBConnector.Connect();
-            lblName.Text =dBConnector.DoSQL(sql).ToString();
+            dr = dBConnector.DoSQL(sql);
+            while (dr.Read())
+            {
+                lblName.Text = " Hello " + dr[0].ToString();
+            }
             dBConnector.Close();
-           
-
         }
+
     }
 }

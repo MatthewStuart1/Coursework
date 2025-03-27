@@ -36,8 +36,8 @@ namespace CourseWork
             if (dr["PasswordHash"].ToString() == hashtext)
             {
 
-                FormCfiMenu formCfiMenu = new FormCfiMenu();
-                userID = Convert.ToInt32(txtUser.Text);
+                FormCfiMenu formCfiMenu = new FormCfiMenu(txtUser.Text);
+          //      userID = Convert.ToInt32(txtUser.Text);
                 formCfiMenu.Show();
 
             }
