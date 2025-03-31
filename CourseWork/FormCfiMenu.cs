@@ -30,8 +30,6 @@ namespace CourseWork
 
         private void lstBookingFill()
         {
-        public void DisplayLateData(int placeholder)
-        {
             clsDBConnector dbConnector = new clsDBConnector();
             OleDbDataReader dr;
             string sqlStr;
@@ -41,9 +39,10 @@ namespace CourseWork
             lstBookings.Items.Clear();
             while (dr.Read())
             {
-                lstBookings.Items.Add(dr[0].);
-                lstBookings.Items.Add(dr[1].ToString);
-
+                DateTime BookingTime = Convert.ToDateTime(dr[0]);
+                lstBookings.Items.Add(BookingTime.ToString("dd-MM-yyy mm:ss"));
+                lstBookings.Items[lstBookings.Items.Count - 1].SubItems.Add(dr[1].ToString());
+                lstBookings.Items[lstBookings.Items.Count - 1].SubItems.Add(dr[2].ToString());
             }
             dbConnector.Close();
         }
